@@ -19,10 +19,7 @@ body {
   text-transform: uppercase;
   padding: 1em;
 }
-header {
-  background-color: #3398cc;
-  grid-area: header;
-}
+
 main {
   background-color: #976698;
   grid-area: main;
@@ -41,4 +38,11 @@ nav {
     "header header header" 
     "nav main main" 
     "nav main main";
+}
+
+/*HEADER*/
+
+header {
+  grid-area: header;
+  background-color: orange;
 }
