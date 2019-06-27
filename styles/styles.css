@@ -6,6 +6,7 @@
 
 body {
   margin: 0;
+  font-family: 'Roboto', sans-serif;
 }
 
 
@@ -16,25 +17,48 @@ body {
   grid-template-rows: auto;
   grid-template-columns: 100%;
   grid-template-areas: 
-    "header header header" 
-    "nav nav nav" 
-    "main main main";
-}
-
-
-/*NAV*/
-
-nav {
-  background-color: #1e1e24;
-  grid-area: nav;
+    "header" 
+    "nav" 
+    "main";
 }
 
 
 /*HEADER*/
 
 header {
+  display: flex;
+  flex-flow: row wrap;
+  align-items: center;
   grid-area: header;
   background-color: #444140;
+}
+
+.bell svg {
+  height: 40px;
+}
+
+header > img {
+  border-radius: 50%;
+  margin: 0 auto;
+  height: 60px;
+}
+
+
+/*NAV*/
+
+nav {
+  display: flex;
+  background-color: #1e1e24;
+  grid-area: nav;
+}
+
+nav a {
+  margin: 10px auto;
+  height: 30px;
+}
+
+nav a img {
+  height: 100%;
 }
 
 
