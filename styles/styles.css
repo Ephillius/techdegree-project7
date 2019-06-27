@@ -27,20 +27,43 @@ body {
 
 header {
   display: flex;
-  flex-flow: row wrap;
+  flex-flow: wrap;
   align-items: center;
+  justify-content: space-between;
   grid-area: header;
   background-color: #444140;
 }
 
-.bell svg {
-  height: 40px;
+header h1 {
+  width: 100%;
+  text-align: center;
 }
 
-header > img {
+header h1 > span {
+  font-weight: 100;
+}
+
+.bell {
+  text-align: right;
+  width: 35%;
+  padding-right: 15px;
+  border-right: solid 3px #1e1e24;
+}
+
+.bell svg {
+  height: 35px;
+}
+
+.member-main {
+  display: flex;
+  align-items: center;
+  width: 65%;
+}
+
+.member-main img {
   border-radius: 50%;
-  margin: 0 auto;
-  height: 60px;
+  margin: 0 10px;
+  height: 50px;
 }
 
 
@@ -55,6 +78,10 @@ nav {
 nav a {
   margin: 10px auto;
   height: 30px;
+}
+
+nav a:active {
+  
 }
 
 nav a img {
