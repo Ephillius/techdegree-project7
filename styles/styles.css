@@ -25,7 +25,7 @@ body {
 /*NAV*/
 
 nav {
-  background-color: #8494a4;
+  background-color: #1e1e24;
   grid-area: nav;
 }
 
@@ -34,14 +34,14 @@ nav {
 
 header {
   grid-area: header;
-  background-color: orange;
+  background-color: #444140;
 }
 
 
 /*MAIN*/
 
 main {
-  background-color: #976698;
+  background-color: #f7ebe8;
   grid-area: main;
 }
 
@@ -52,6 +52,7 @@ main {
 .widget-container-half {
   width: 95vw;
 }
+
 
 /*MEDIA QUERIES*/
 
