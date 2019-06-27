@@ -2,7 +2,11 @@ const alert = document.getElementById('alert');
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');
 const mobileCanvas = document.getElementById('mobile-chart');
+const user = document.getElementById('userField');
+const message = document.getElementById('messageField');
+const send = document.getElementById('send');
 
+/*ALERT NOTIFICATION*/
 alert.innerHTML = 
 	`
 	<div class="alert-banner">
@@ -23,7 +27,6 @@ alert.addEventListener('click', e => {
 /*LINE CHART*/
 let trafficData = {
 	labels: [
-		'',
 		'16-22', 
 		'23-29', 
 		'30-5', 
@@ -39,7 +42,6 @@ let trafficData = {
 	datasets: [
 		{
 			data: [
-				0,
 				750, 
 				1250, 
 				1000, 
@@ -172,3 +174,16 @@ let mobileChart = new Chart(mobileCanvas, {
 	options: mobileOptions
 });
 
+
+/*MESSAGE*/
+send.addEventListener('click', () => {
+	if (use.value === '' && message.value === '') {
+		alert('Please fill out the user and message fields before submiting');
+	} else if (user.value === '') {
+		alert('Please fill out the user');
+	} else if (message.value === '') {
+		alert('Please fill out the message');
+	} else {
+		alert('Message successfuly sent');
+	}
+});
