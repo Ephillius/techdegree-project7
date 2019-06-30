@@ -137,6 +137,10 @@ main {
   float: right;
 }
 
+.form-field {
+  width: 100%;
+}
+
 /*WIDGETS*/
 
 .widget-container-full,
