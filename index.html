@@ -31,7 +31,7 @@
 				</div>
 			</div>
 			<div class="member-main">
-				<img src="images/me.jpg" alt="Member profile picture">
+				<img class="profile-image" src="images/me.jpg" alt="Member profile picture">
 				<h3>Bernardo Ferreira</h3>
 			</div>
 		</header>
@@ -66,12 +66,23 @@
 			<section class="traffic">
 				<div class="traffic-header">
 					<h3>Traffic</h3>
-					<ul class="traffic-nav">
-						<li class="traffic-nav-link">Hourly</li>
-						<li class="traffic-nav-link">Daily</li>
-						<li class="traffic-nav-link">Weekly</li>
-						<li class="traffic-nav-link">Monthly</li>
-					</ul>
+					<fieldset>
+						<div class="switch-toggle switch-ios">
+							<input id="hour" name="view" type="radio" checked>
+							<label for="hour" onclick="">Hourly</label>
+
+							<input id="day" name="view" type="radio">
+							<label for="day" onclick="">Daily</label>
+
+							<input id="week" name="view" type="radio">
+							<label for="week" onclick="">Weekly</label>
+
+							<input id="month" name="view" type="radio">
+							<label for="month" onclick="">Monthly</label>
+
+							<a></a>
+						</div>
+					</fieldset>
 				</div>
 				<div class="widget-container-full">
 					<canvas id="traffic-chart"></canvas>
@@ -141,7 +152,7 @@
 						<img class="profile-image" src="images/member-1.jpg" alt="Forum member">
 						<div class="member-info">
 							<p>Victoria Chambers</p>
-							<a mailto="victoria.chambers80@example.com"></a>
+							<a mailto="victoria.chambers80@example.com">victoria.chambers80@example.com</a>
 						</div>
 						<p>10/15/15</p>
 					</div>
@@ -150,7 +161,7 @@
 						<img class="profile-image" src="images/member-2.jpg" alt="Forum member">
 						<div class="member-info">
 							<p>Dale Byrd</p>
-							<a mailto="dave.byrd52@example.com"></a>
+							<a mailto="dave.byrd52@example.com">dave.byrd52@example.com</a>
 						</div>
 						<p>10/15/15</p>
 					</div>
@@ -159,7 +170,7 @@
 						<img class="profile-image" src="images/member-3.jpg" alt="Forum member">
 						<div class="member-info">
 							<p>Dawn Wood</p>
-							<a mailto="dawn.wood16@example.com"></a>
+							<a mailto="dawn.wood16@example.com">dawn.wood16@example.com</a>
 						</div>
 						<p>10/15/15</p>
 					</div>
@@ -168,7 +179,7 @@
 						<img class="profile-image" src="images/member-4.jpg" alt="Forum member">
 						<div class="member-info">
 							<p>Dan Oliver</p>
-							<a mailto="dan.oliver82@example.com"></a>
+							<a mailto="dan.oliver82@example.com">dan.oliver82@example.com</a>
 						</div>
 						<p>7/15/15</p>
 					</div>
