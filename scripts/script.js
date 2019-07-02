@@ -19,7 +19,9 @@ alert.innerHTML =
 
 alert.addEventListener('click', e => {
 	const element = e.target;
-	if (element.classList.contains('alert-banner-close')) {
+	if (element.classList.contains('alert-banner-desktop')) {
+		alert.style.display = 'none';
+	} else {
 		alert.style.display = 'none';
 	}
 });
@@ -28,6 +30,7 @@ alert.addEventListener('click', e => {
 /*LINE CHART*/
 let trafficData = {
 	labels: [
+		'',
 		'16-22', 
 		'23-29', 
 		'30-5', 
@@ -43,6 +46,7 @@ let trafficData = {
 	datasets: [
 		{
 			data: [
+				0,
 				750, 
 				1250, 
 				1000, 
@@ -66,13 +70,23 @@ let trafficOptions = {
 	aspectRatio: 2.5,
 	scales: {
 		yAxes: [{
-			ticks: {
-				beginAtZero: true
+			gridLines: {
+				drawTicks: false
+			}
+		}],
+		xAxes: [{
+			gridLines: {
+				drawTicks: false
 			}
 		}]
 	},
 	legend: {
 		display: false
+	},
+	elements: {
+		line: {
+			tension: 0
+		}
 	}
 };
 
@@ -81,6 +95,9 @@ let trafficChart = new Chart(trafficCanvas, {
 	data: trafficData,
 	options: trafficOptions
 });
+
+/*LINE CHART BUTTONS*/
+
 
 
 /*BAR CHART*/
@@ -163,7 +180,7 @@ let mobileOptions = {
 	legend: {
 		position: 'right',
 		labels: {
-			boxWidth: 20,
+			boxWidth: 15,
 			fontStyle: 'bold'
 		}
 	}
