@@ -20,9 +20,10 @@ body {
 .member .profile-image,
 .new-member .profile-image {
   margin-top: 0;
+  margin-left: 0;
 }
 
-h3 {
+section h3 {
   text-transform: uppercase;
   font-weight: 400;
   color: #444140;
@@ -216,6 +217,14 @@ fieldset label {
 /*SOCIAL STATS*/
 .social-media {
   height: 50px;
+}
+
+.social-container {
+  display: flex;
+}
+
+.social-text {
+  display: flex;
 }
 
 
