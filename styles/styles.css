@@ -13,10 +13,21 @@ body {
 
 .profile-image {
   border-radius: 50%;
-  margin: 0 10px;
+  margin: 10px 10px;
   height: 50px;
 }
 
+.member .profile-image,
+.new-member .profile-image {
+  margin-top: 0;
+}
+
+h3 {
+  text-transform: uppercase;
+  font-weight: 400;
+  color: #444140;
+  font-size: 16px;
+}
 
 /***************/
 /*GRID SETTINGS*/
@@ -183,12 +194,15 @@ section {
 }
 
 
+/*********/
 /*WIDGETS*/
+/*********/
 .widget-container-full,
 .widget-container-half {
   
 }
 
+/*TRAFFIC*/
 fieldset {
   margin: 0 0 10px;
   border: none;
@@ -198,6 +212,13 @@ fieldset label {
   font-size: 12px;
 }
 
+
+/*SOCIAL STATS*/
+.social-media {
+  height: 50px;
+}
+
+
 /*MEMBERS*/
 .new-member,
 .member {
@@ -205,10 +226,19 @@ fieldset label {
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
+  border-bottom: solid 1px rgba(68, 65, 64, 0.5);
+}
+
+.new-member:last-child,
+.member:last-child {
+  border: none;
+  margin-bottom: 30px;
 }
 
 .member-info {
-  flex: 0 0 75%;
+  flex: 0 0 100%;
+  order: 1;
 }
 
 .member-info > p {
@@ -219,9 +249,8 @@ fieldset label {
   font-size: smaller;
 }
 
-.new-member p,
-.member p {
-  
+.new-member > p {
+  font-size: smaller;
 }
 
 .switch-toggle.switch-ios {
@@ -230,9 +259,9 @@ fieldset label {
   box-shadow: none;
 }
 
-
+/***************/
 /*MEDIA QUERIES*/
-
+/***************/
 @media (min-width: 768px) {
   .grid {
     grid-template-columns: 55px 1fr;
