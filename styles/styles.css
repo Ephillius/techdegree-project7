@@ -8,7 +8,7 @@
 body {
   margin: 0;
   font-family: 'Roboto', sans-serif;
-  background-color: #f7ebe8;
+  background-color: #fff;
 }
 
 .profile-image {
@@ -73,6 +73,38 @@ header h1 > span {
 
 .bell svg {
   height: 35px;
+  transform-origin: 50% 50%;
+  transform-box: fill-box;
+}
+
+
+/*animation*/
+@keyframes ring {
+   /* start from original */
+   0% {
+     
+   }
+   /* rotate right */
+   20% {
+     transform: rotate(10deg);
+   }
+   /* rotate left */
+   40% {
+     transform: rotate(-10deg);
+   }
+   /* rotate right */
+   60% {
+     transform: rotate(10deg);
+   }
+   /* return center */
+   80% {
+     transform: rotate(0deg);
+   }
+}
+
+.bell svg:hover {
+  animation: ring 2s ease infinite;
+  filter: drop-shadow(0 5px 2px rgba(0, 0, 0, .7));
 }
 
 .member-main {
@@ -91,17 +123,33 @@ nav {
 }
 
 nav a {
-  margin: 10px auto;
-  height: 30px;
+  padding: 10px 0;
+  margin: 0 auto;
+  height: 70px;
 }
 
-nav a:active {
-  
+nav a.active {
+  border-bottom: solid 6px #E54B4B;
+}
+
+nav a:hover {
+  opacity: 0.7;
+  border-bottom: solid 6px #E54B4B;
 }
 
 nav a img {
   height: 100%;
 }
+
+/*centered imgs*/
+.dashboard img {
+  transform: translateX(-1.5px);
+}
+
+.visits img {
+  transform: translateX(4px);
+}
+
 
 
 /******/
@@ -109,7 +157,7 @@ nav a img {
 /******/
 main {
   grid-area: main;
-  margin: 10px 0;
+  margin-bottom: 10px;
 }
 
 section {
@@ -156,18 +204,22 @@ section {
 .main-header {
   display: flex;
   flex-flow: wrap;
-  margin: 0 10px;
+  background-color: #F7EBE8;
+  padding-top: 15px;
 }
 
 .title {
+  background: white;
   flex: 0 0 100%;
   text-align: center;
   order: 1;
-  margin-bottom: 10px;
+  margin: 0;
+  padding-top: 20px;
+  padding-bottom: 10px;
 }
 
 .main-header-search {
-  flex: 0 0 100%;
+  flex: 0 0 90%;
   border: solid 1px #444140;
   border-radius: 5px;
   padding: 10px;
@@ -215,16 +267,43 @@ fieldset label {
 
 
 /*SOCIAL STATS*/
-.social-media {
-  height: 50px;
+.social-image{
+  background-color: #444140;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.social-image svg path{
+  fill: #fff;
 }
 
 .social-container {
   display: flex;
+  align-items: center;
+  justify-content: space-around;
+  border: solid 1px rgba(68, 65, 64, 0.5);
+  border-radius: 5px;
 }
 
 .social-text {
   display: flex;
+  flex-flow: wrap;
+  align-items: center;
+}
+
+.social-text p {
+  flex: 0 0 100%;
+  margin: 0;
+}
+
+.social-text p:first-child {
+  font-weight: 700;
+}
+
+.social-text p:last-child {
+  font-size: 50px;
+  font-weight: 100;
 }
 
 
@@ -251,15 +330,15 @@ fieldset label {
 }
 
 .member-info > p {
-  margin: auto;
+  margin: 0;
 }
 
 .member-info > a {
-  font-size: smaller;
+  font-size: 13px;
 }
 
 .new-member > p {
-  font-size: smaller;
+  font-size: 13px;
 }
 
 .switch-toggle.switch-ios {
