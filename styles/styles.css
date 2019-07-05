@@ -67,6 +67,7 @@ header h1 > span {
 }
 
 .bell {
+  position: relative;
   padding-right: 15px;
   border-right: solid 3px #1e1e24;
 }
@@ -107,6 +108,17 @@ header h1 > span {
   filter: drop-shadow(0 5px 2px rgba(0, 0, 0, .7));
 }
 
+.badge {
+  background-color: #E54B4B;
+  border-radius: 2px;
+  color: white;
+  padding: 1px 3px;
+  font-size: 10px;
+  position: absolute;
+  top: 0;
+  right: 15px;
+}
+
 .member-main {
   display: flex;
   align-items: center;
@@ -123,7 +135,7 @@ nav {
 }
 
 nav a {
-  padding: 10px 0;
+  padding: 10px 10px;
   margin: 0 auto;
   height: 70px;
 }
@@ -134,7 +146,6 @@ nav a.active {
 
 nav a:hover {
   opacity: 0.7;
-  border-bottom: solid 6px #E54B4B;
 }
 
 nav a img {
