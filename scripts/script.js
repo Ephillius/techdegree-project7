@@ -21,8 +21,6 @@ alert.addEventListener('click', e => {
 	const element = e.target;
 	if (element.classList.contains('alert-banner-desktop')) {
 		alert.style.display = 'none';
-	} else {
-		alert.style.display = 'none';
 	}
 });
 
@@ -68,6 +66,8 @@ let trafficData = {
 
 let trafficOptions = {
 	aspectRatio: 2.5,
+	maintainAspectRatio: false,
+	responsive: true,
 	scales: {
 		yAxes: [{
 			gridLines: {
@@ -95,6 +95,7 @@ let trafficChart = new Chart(trafficCanvas, {
 	data: trafficData,
 	options: trafficOptions
 });
+
 
 /*LINE CHART BUTTONS*/
 
