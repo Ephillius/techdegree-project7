@@ -28,6 +28,14 @@ a {
   color: #E54B4B;
 }
 
+a:focus {
+  outline: none;
+}
+
+input:focus {
+  outline: none;
+}
+
 
 /***************/
 /*GRID SETTINGS*/
@@ -253,7 +261,6 @@ section h3 {
   border-style: none;
   margin-left: 5px;
   width: 87%;
-  padding: 0;
 }
 
 .search-icon {
@@ -481,6 +488,7 @@ fieldset label {
 
   header {
     justify-content: space-between;
+    padding: 10px 20px;
   }
 
   header .bell {
@@ -493,7 +501,7 @@ fieldset label {
   }
 
   nav a {
-    margin: 0;
+    margin: 15px 0px;
   }
 
   nav a.active {
@@ -501,7 +509,31 @@ fieldset label {
     border-left: solid 6px #E54B4B;
   }
 
-  main {
+  .main-header {
+    justify-content: space-between;
+    padding-top: 0;
+    margin-bottom: 20px;
+  }
+
+  .title {
+    order: 0;
+    flex: 0 0 180px; 
+    padding: 25px 0;   
+  }
+
+  .main-header-search {
+    flex: 0 0 400px;
+    margin: auto 25px;
+  }
+
+  .traffic-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: baseline;
+  }
+
+  .traffic-header fieldset {
+    flex: 0 0 40%;
   }
 
   .traffic,
@@ -534,18 +566,10 @@ fieldset label {
     align-content: center;
     justify-content: space-between;
     align-items: baseline;
-    padding: 10px 20px;
+    padding: 0 20px;
   }
 
   .alert-banner p:first-child {
     margin: 10px 0;
-  }
-
-  .alert-banner-desktop {
-    display: block;
-  }
-
-  .alert-banner-mobile {
-    display: none;
   }
 }
