@@ -7,6 +7,7 @@
 
 body {
   margin: 0;
+  max-width: 1366px;
   font-family: 'Roboto', sans-serif;
   background-color: #fff;
 }
@@ -75,7 +76,7 @@ header h1 > span {
 
 .bell {
   position: relative;
-  padding-right: 15px;
+  padding: 15px 15px 0 0;
   border-right: solid 3px #1e1e24;
 }
 
@@ -122,8 +123,8 @@ header h1 > span {
   padding: 1px 3px;
   font-size: 10px;
   position: absolute;
-  top: 0;
-  right: 15px;
+  top: 10px;
+  right: 20px;
 }
 
 .member-main {
@@ -216,16 +217,11 @@ section h3 {
   flex-direction: column;
 }
 
-.alert-banner-desktop {
-  display: none;
-}
-
 .alert-banner p:first-child {
   margin-top: 0;
 }
 
-.alert-banner-desktop,
-.alert-banner-mobile {
+.close-banner {
   margin: 0;
 }
 
@@ -572,4 +568,15 @@ fieldset label {
   .alert-banner p:first-child {
     margin: 10px 0;
   }
+
+  #traffic-chart {
+    height: 150px;
+  }
 }
+
+
+@media (min-width: 1024px) {
+  body {
+    margin: 10px auto;
+    box-shadow: 0px 9px 10px 2px rgba(0, 0, 0, .7);
+  }
