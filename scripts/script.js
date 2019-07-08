@@ -11,15 +11,14 @@ alert.innerHTML =
 	`
 	<div class="alert-banner">
 		<p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
-		<p class="alert-banner-mobile">(click to close)</p>
-		<p class="alert-banner-desktop"><strong>x</strong></p>
+		<p class="close-banner">(click to close)</p>
 	</div>
 	`
 ;
 
 alert.addEventListener('click', e => {
 	const element = e.target;
-	if (element.classList.contains('alert-banner-desktop')) {
+	if (element.classList.contains('alert-banner')) {
 		alert.style.display = 'none';
 	}
 });
