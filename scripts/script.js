@@ -1,4 +1,4 @@
-const alert = document.getElementById('alert');
+const alertPop = document.getElementById('alert');
 const trafficCanvas = document.getElementById('traffic-chart');
 const dailyCanvas = document.getElementById('daily-chart');
 const mobileCanvas = document.getElementById('mobile-chart');
@@ -7,7 +7,7 @@ const message = document.getElementById('messageField');
 const send = document.getElementById('send');
 
 /*ALERT NOTIFICATION*/
-alert.innerHTML = 
+alertPop.innerHTML = 
 	`
 	<div class="alert-banner">
 		<p><strong>Alert:</strong> You have <strong>6</strong> overdue tasks to complete</p>
@@ -16,11 +16,8 @@ alert.innerHTML =
 	`
 ;
 
-alert.addEventListener('click', e => {
-	const element = e.target;
-	if (element.classList.contains('alert-banner')) {
-		alert.style.display = 'none';
-	}
+alertPop.addEventListener('click', e => {
+	alertPop.style.display = 'none';
 });
 
 
@@ -64,9 +61,7 @@ let trafficData = {
 };
 
 let trafficOptions = {
-	aspectRatio: 2.5,
-	maintainAspectRatio: false,
-	responsive: true,
+	aspectRatio: 3,
 	scales: {
 		yAxes: [{
 			gridLines: {
@@ -195,7 +190,7 @@ let mobileChart = new Chart(mobileCanvas, {
 
 /*MESSAGE*/
 send.addEventListener('click', () => {
-	if (use.value === '' && message.value === '') {
+	if (user.value === '' && message.value === '') {
 		alert('Please fill out the user and message fields before submiting');
 	} else if (user.value === '') {
 		alert('Please fill out the user');
@@ -203,5 +198,7 @@ send.addEventListener('click', () => {
 		alert('Please fill out the message');
 	} else {
 		alert('Message successfuly sent');
+		user.value = "";
+		message.value = "";
 	}
 });
