@@ -14,7 +14,7 @@ body {
 
 .profile-image {
   border-radius: 50%;
-  margin: 10px 10px;
+  margin: 10px;
   height: 50px;
 }
 
@@ -38,6 +38,23 @@ input:focus {
 }
 
 
+/*STICKY NAV*/
+.sticky {
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  z-index: 10;
+  top: 0;
+  width: 100%;
+}
+
+.sticky + .content {
+  padding-top: 60px;
+}
+
+
 /***************/
 /*GRID SETTINGS*/
 /***************/
@@ -56,11 +73,11 @@ input:focus {
 /*HEADER*/
 /********/
 header {
+  grid-area: header;
   display: flex;
-  flex-flow: wrap;
+  flex-wrap: wrap;
   align-items: center;
   justify-content: center;
-  grid-area: header;
   background-color: #444140;
   padding-bottom: 10px;
 }
@@ -137,13 +154,13 @@ header h1 > span {
 /*NAV*/
 /*****/
 nav {
+  grid-area: nav;
   display: flex;
   background-color: #1e1e24;
-  grid-area: nav;
 }
 
 nav a {
-  padding: 10px 10px;
+  padding: 10px;
   margin: 0 auto;
   height: 70px;
 }
@@ -177,6 +194,20 @@ nav a img {
 main {
   grid-area: main;
   margin-bottom: 10px;
+  display: grid;
+  grid-template-rows: auto;
+  grid-template-columns: 100%;
+  grid-template-areas: 
+    "main-header"
+    "alert"
+    "traffic" 
+    "daily" 
+    "mobile" 
+    "social" 
+    "members"
+    "activity"
+    "message"
+    "settings";
 }
 
 section {
@@ -197,14 +228,10 @@ section h3 {
   margin-left: 10px;
 }
 
-.traffic {
-  border: none;
-  margin-top: 10px;
-}
-
 
 /*ALERT*/
 .alert {
+  grid-area: alert;
   margin: 0 10px;
 }
 
@@ -228,8 +255,9 @@ section h3 {
 
 /*MAIN-HEADER*/
 .main-header {
+  grid-area: main-header;
   display: flex;
-  flex-flow: wrap;
+  flex-wrap: wrap;
   background-color: #F7EBE8;
   padding-top: 15px;
 }
@@ -269,7 +297,14 @@ section h3 {
 /*********/
 /*WIDGETS*/
 /*********/
+
 /*TRAFFIC*/
+.traffic {
+  grid-area: traffic;
+  border: none;
+  margin-top: 10px;
+}
+
 fieldset {
   margin: 0 0 10px;
   border: none;
@@ -280,7 +315,23 @@ fieldset label {
 }
 
 
+/*DAILY TRAFFIC*/
+.daily {
+  grid-area: daily;
+}
+
+
+/*MOBILE*/
+.mobile {
+  grid-area: mobile;
+}
+
+
 /*SOCIAL STATS*/
+.social {
+  grid-area: social;
+}
+
 .social-container {
   display: flex;
   align-items: center;
@@ -299,7 +350,7 @@ fieldset label {
   justify-content: center;
   border-radius: 50%;
   height: 80px;
-  width: 80px;
+  width: 90px;
   margin: 0 20px;
 }
 
@@ -329,7 +380,7 @@ fieldset label {
 
 .social-text {
   display: flex;
-  flex-flow: wrap;
+  flex-wrap: wrap;
   align-items: center;
 }
 
@@ -349,6 +400,14 @@ fieldset label {
 
 
 /*MEMBERS*/
+.members {
+  grid-area: members;
+}
+
+.activity {
+  grid-area: activity;
+}
+
 .new-member,
 .member {
   display: flex;
@@ -399,6 +458,14 @@ fieldset label {
 
 
 /*FORM & SETTINGS*/
+.message {
+  grid-area: message;
+}
+
+.settings {
+  grid-area: settings;
+}
+
 .form-field,
 .form-user,
 .form-area,
@@ -418,6 +485,7 @@ fieldset label {
 .form-user,
 .form-area {
   margin: 5px 0;
+  background-color: #F7EBE8
 }
 
 .button-primary,
@@ -432,10 +500,6 @@ fieldset label {
 
 .button-primary {
   background-color: #444140;
-}
-
-.button-disabled {
-
 }
 
 .form-area {
@@ -460,6 +524,7 @@ fieldset label {
 
 .form-field {
   margin: 20px 0 10px;
+  background-color: #F7EBE8
 }
 
 .form-field option {
@@ -476,6 +541,21 @@ fieldset label {
     grid-template-areas: 
       "header header" 
       "nav main";
+  }
+
+  main {
+    margin-bottom: 20px;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas:
+      "main-header main-header"
+      "alert alert" 
+      "traffic traffic" 
+      "daily mobile"
+      "social social"
+      "members members"
+      "activity activity"
+      "message message"
+      "settings settings";
   }
 
   header h1 {
@@ -505,6 +585,27 @@ fieldset label {
     border-left: solid 6px #E54B4B;
   }
 
+  section {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  section h3 {
+    width: 90%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .widget-container-half {
+    width: 90%;
+    margin: 0 auto;
+  }
+
+  .widget-container-full {
+    width: 95%;
+    margin: 0 auto;
+  }
+
   .main-header {
     justify-content: space-between;
     padding-top: 0;
@@ -525,36 +626,13 @@ fieldset label {
   .traffic-header {
     display: flex;
     justify-content: space-between;
-    align-items: baseline;
+    align-items: flex-start;
+    width: 95%;
+    margin: 0 auto;
   }
 
-  .traffic-header fieldset {
+  fieldset {
     flex: 0 0 40%;
-  }
-
-  .traffic,
-  .social {
-    grid-column: 1 / span 2;
-  }
-
-  .daily,
-  .members,
-  .message {
-    grid-column: 1 / span 1;
-  }
-
-  .mobile,
-  .activity,
-  .settings {
-    grid-column: 2 / span 1;
-  }
-
-  .widget-container-full {
-    width: 80%;
-  }
-
-  .widget-container-half {
-    width: 40%;
   }
 
   .alert-banner {
@@ -569,14 +647,118 @@ fieldset label {
     margin: 10px 0;
   }
 
-  #traffic-chart {
-    height: 150px;
+  .daily {
+    border-right: solid 1px #444140;
+  }
+
+  .social div {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+  }
+
+  .social-container {
+    padding-left: 0;
+    padding-right: 0;
+  }
+
+  .social-image {
+    width: 80px;
+  }
+
+  .new-member .member-info {
+    flex: 0 0 80%;
+    order: 0;
+  }
+
+  .member .member-info {
+    flex: 0 0 85%;
+    order: 0;
+  }
+
+  .message {
+    border-right: solid 1px #444140;
+  }
+
+  .form-area {
+    height: 120px;
+  }
+
+  #pop {
+    justify-content: left;
+  }
+
+  #pop strong {
+    flex: 0 0 35%;
+  }
+
+  #pop > span {
+    flex: 0 0 15%;
+  }
+
+  .settings-button {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  #save,
+  #cancel {
+    width: 47%; 
+  }
+
+  .form-field option {
+    font-size: initial;
   }
 }
 
 
 @media (min-width: 1024px) {
   body {
-    margin: 10px auto;
+    margin: 0 auto;
     box-shadow: 0px 9px 10px 2px rgba(0, 0, 0, .7);
+  }
+
+  nav a {
+    padding: 20px;
+  }
+
+  main {
+    grid-template-areas:
+    "main-header main-header"
+    "alert alert"
+    "traffic traffic" 
+    "daily mobile"
+    "social social"
+    "members activity"
+    "message settings";
+  }
+
+  fieldset {
+    flex: 0 0 35%;
+  }
+
+  .social .widget-container-full {
+    width: 97%;
+  }
+
+  .social h3 {
+    width: 94%;
+  }
+
+  .new-member,
+  .member {
+    flex-wrap: nowrap;
+    justify-content: space-around;
+  }
+
+  .members {
+    border-right: solid 1px #444140;
+  }
+
+  #pop strong {
+    flex: 0 0 45%;
+  }
+
+  #pop > span {
+    flex: 0 0 20%;
   }
