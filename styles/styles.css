@@ -106,23 +106,15 @@ header h1 > span {
 
 /*animation*/
 @keyframes ring {
-   /* start from original */
-   0% {
-     
-   }
-   /* rotate right */
    20% {
      transform: rotate(10deg);
    }
-   /* rotate left */
    40% {
      transform: rotate(-10deg);
    }
-   /* rotate right */
    60% {
      transform: rotate(10deg);
    }
-   /* return center */
    80% {
      transform: rotate(0deg);
    }
