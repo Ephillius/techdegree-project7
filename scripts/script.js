@@ -175,8 +175,11 @@ let mobileOptions = {
 	legend: {
 		position: 'right',
 		labels: {
+			fontSize: 16,
+			fontStyle: 'normal',
+			fontFamily: 'Roboto',
 			boxWidth: 15,
-			fontStyle: 'bold'
+			padding: 20
 		}
 	}
 };
